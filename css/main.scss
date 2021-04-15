@@ -1,0 +1,353 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+}
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+@mixin flex {
+    display: flex;
+    // border: 1px solid;
+    flex-wrap: wrap;
+}
+@mixin width($w) {
+    width: $w;
+    padding: 10px;
+}
+@mixin w100() {
+    width: 100%;
+}
+img {
+    width: 100%;
+}
+.bg-color-lightblack {
+    background-color: #F0F0F0;
+}
+p, h3 {
+    line-height: 25px;
+    padding-top: 30px;
+}
+
+
+.wrapper {
+    @include flex();
+        .list {
+            @include w100();
+            @include flex();
+        }
+        .header-list {
+            @include width(100%/10);
+            text-align: center;
+            &:hover {
+                background-color: aqua;
+                border-radius: 10px;
+            }
+        }
+
+    .content {
+        width: 75%;
+        @include flex();
+        .content-box-1 {
+            @include w100();
+            @include flex();
+            &:hover {
+                h3 {
+                    color: blue;
+                    text-decoration: 1px solid blue;
+                }
+            }
+
+            .content-1-child {
+                @include width(100%/2);
+
+                img {
+                    @include w100();
+                    padding: 0;
+                }
+            }
+            .content-1-child-img {
+                padding: 0;
+            }
+        }
+        .content-box-2 {
+            width: 100%;
+            @include flex(); 
+            .content-box-2-child {
+                @include flex();
+                @include width(100%/2);
+                .content-box-2-child-1 {
+                    @include width(100%/2);
+                    &:hover {
+                        h4 {
+                            color: blue;
+                            
+                        } 
+                    }
+                    img {
+                        @include w100();
+                    }
+                }
+            }
+        }
+        .content-box-3 {
+            width: 100%;
+            @include flex();
+            .content-box-3-child{
+                @include flex();
+                @include width(100%/3);
+                &:hover {
+                    p {
+                        color: blue;
+                    }
+                }
+                img {
+                    @include w100();
+                    height: 229px;
+                }
+            }
+        }
+    }
+    .sidebar {
+        @include width(25%);
+        .sidebar-child {
+            hr {
+                margin: 15px 0;
+            }
+            .sidebar-child-box {
+                width: 300px;
+                height: 50px;
+                margin-top: 50px;
+                padding: 15px;
+                border-top-right-radius: 100px;
+                border-bottom-right-radius: 100px;
+                background-color: #F0F0F0;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 3px;
+                    height: 50px;
+                    top: 0;
+                    left: 0;
+                    background-color: blue;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    transform: rotate(45deg);
+                    border-top: 1px solid;
+                    border-right: 1px solid;
+                    top: 20px; 
+                    left: 235px;
+                }
+            }
+        }
+    }
+    .content-box-4 {
+        width: 100%;
+        @include flex();
+        .content-box-4-child{
+            @include flex();
+            @include width(100%/2);
+            .content-box-4-child-box {
+                @include flex();
+                @include width(100%/2);
+            }
+            img {
+            @include w100();
+                }
+            }
+    }
+    
+}
+.box-header {
+    @include flex();
+    width: 100%;
+    .box-header-child {
+    @include width(100%/2); 
+    h3 {
+        padding-top: -30px;
+    }
+    &:nth-child(2) {
+        padding-left: 450px;
+    }
+    }
+}
+.center-img {
+    @include flex();
+    width: 100%;
+    .center-img-1 {
+        @include width(100%/10);
+        background-color: rgb(197, 196, 196);
+    }
+    .center-img-2{
+        @include width(80%);
+        padding: 0;
+    }
+}
+.intervyu {
+    width: 100%;
+    background-color: #F0F0F0; 
+    .box-header-child:nth-child(2) {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            border-top: 1px solid;
+            border-right: 1px solid;
+            top: 14px; 
+            left: 527px;
+        }
+        &:hover {
+            color: blue;
+        }
+    }
+    .intervyu-box {
+        @include flex();
+        width: 100%;
+        .intervyu-card {
+            @include width(100%/4);
+            background-color: #F0F0F0;
+            &:hover {
+                p {
+                    color: blue;
+                }
+            }
+            img {
+                width: 329px;
+                height: 206px;
+                box-shadow: 10px 10px blue;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+.wrapper {
+    .surishtiruv {
+        @include flex();
+        width: 100%;
+        .surishtiruv-box {
+            
+            @include width(100%/2); 
+            &:nth-child(1) {
+                background-color: #F0F0F0;
+                &:hover {
+                    color: blue;
+                }
+            }
+            .surishtiruv-box-child {
+                width: 100%;
+                @include flex();
+
+                div {
+                    &:nth-child(1) {
+                        @include width(25%);
+                    }
+                    &:nth-child(2) {
+                        @include width(75%);
+                    }
+                }
+            }
+        }
+    }
+    .maqolalar {
+        @include flex();
+        width: 100%;
+            .box-header-child:nth-child(2) {
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    transform: rotate(45deg);
+                    border-top: 1px solid;
+                    border-right: 1px solid;
+                    top: 14px; 
+                    left: 527px;
+
+                }
+                &:hover {
+                    color: blue;
+                    cursor: pointer;
+                }
+        }
+        .maqolalar-box {
+            @include width(100%/3);
+            img {
+                width: 445px;
+                height: 264px;
+            }
+            &:hover {
+                p {
+                    color: blue;
+                }
+            }
+        }
+    }
+}
+.biznes {
+    width: 100%;
+    background-color: #F0F0F0;
+    .intervyu-card {
+        background-color: #fff;    
+    }
+}
+.wrapper {
+    .videoyangiliklar {
+        @include flex();
+        width: 100%;
+
+        .videoyangiliklar-box {
+
+            .box-header-child:nth-child(2) {
+                position: relative;
+                padding-left: 80px;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    transform: rotate(45deg);
+                    border-top: 1px solid;
+                    border-right: 1px solid;
+                    top: 14px; 
+                    left: 270px;
+    
+                }
+                &:hover {
+                    color: blue;
+                    cursor: pointer;
+                }
+            }
+            @include width(100%/2);
+            @include flex();
+            img {
+                width: 110%;
+               display: block;
+                transform: scale(1);
+                transition: 0.3s ease-in-out;
+                
+            }
+            .videoyangiliklar-box-child {
+                @include width(100%/2);
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@import "_footer.scss"
